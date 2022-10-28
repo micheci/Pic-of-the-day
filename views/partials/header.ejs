@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Binary Upload Boom</title>
+    <title>Pic of the Day</title>
     <link
       rel="icon"
       type="image/png"
@@ -24,23 +24,40 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/css/style.css" />
-  </head>
-  <body>
-    <header >
-      <div class="d-flex flex-row mb-3 justify-content-between p-3">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Roboto:wght@100&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital@1&display=swap" rel="stylesheet">
 
-        <h1 class=""><a href="/profile">Binary Upload Boom</a></h1>
+  </head>
+  <body class="container justify-content-between" >
+    <header >
+      <div class="d-flex background mb-3 justify-content-between ">
+
+        <!-- <ul class="nav justify-content-end">
+          
+          <li class="nav-item">
+            <a class="nav-link" href="#">Log In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="#">Sign Up</a>
+          </li>
+        </ul> -->
+
+        <h1 ><a href="/profile" class="regularText  navbar-brand">Pic of the day</a></h1>
         
-        <nav class="navbar bg-light justify-content-around d-flex ">
-          <form class="container-fluid d-flex justify-content-evenly gap-2 "> 
-            <button type="button" class="btn  btn-outline-dark"
+        <nav class="navbar  justify-content-around d-flex ">
+          <form class="container-fluid d-flex justify-content-evenly gap-1 "> 
+            <button type="button" class="btnS links "
         style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-        <a href="/login"  >Log in</a>
+        <a  class="links" href="/login"  >Log in</a>
             </button>
 
-              <button type="button" class="btn  btn-dark "
+              <button type="button" class="btnL  links"
                     style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                    <a href="/Sign Up"  >Sign Up</a>
+                    <a class="links" href="/signup"  >Sign Up</a>
             </button>
           <!-- // <button type="button" class=" btn col-3 btn    btn-dark " style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"></button>><a href="/signup"  >Smaller button</a></button> -->
            <!-- <button type="button" class="col-3 btn    btn-dark "> <a href="/login"  >Main button</a></button> -->
@@ -48,6 +65,7 @@
           </form>
         </nav>
       </div>
+
     </header>
   </body>
 </html>

@@ -1,4 +1,4 @@
-<%- include('partials/header') -%>
+<%- include('partials/headerloggedIn') -%>
 
 <div class="container">
   <div class="row mt-5">
@@ -30,24 +30,51 @@
               <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
             </form>
           </div>
+     
+        </div>
+      
+    </div>
+      <div class=" flex ">
+      <% for(var i=0; i<recipes.length; i++) {%>
+    <ul class="column list-unstyled ">
+      <div class="card p-3 m-2" style="width: 18rem;">
+        <a href="/recipe/<%= recipes[i]._id%>">
+        <img src="<%= recipes[i].image%>" class="card-img-top" alt="...">
+      </a>
+        <div class="card-body">
+          
+          <h5 class="card-title"><%= recipes[i].name%></h5>
+          <p class="card-text content">Ingredients: <%= recipes[i].ingredients%></p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item content">Directions:<%= recipes[i].directions%></li>
+       
+        </ul>
       </div>
-      <div class="col-6">
-        <ul class="row list-unstyled">
+    </ul>
+    <% } %>
+</div>
+
+      <!-- <div class="col-6 ">
+        <ul class="row list-unstyled ">
         <% for(var i=0; i<recipes.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
+          <li class="col-6 justify-content-between mt-5 text-center">
+            <h2 class="titleText text-center"><%= recipes[i].name%></h2>
             <a href="/recipe/<%= recipes[i]._id%>">
-              <h2><%= recipes[i].name%></h2>
-              <img class="img-fluid" src="<%= recipes[i].image%>">
-              <p><%= recipes[i].ingredients%></p>
-              <p><%= recipes[i].directions%></p>
+              
+              <img class="img-fluid recipeIMG " src="<%= recipes[i].image%>">
             </a>
+              <div class="border border-dark">
+              <p class="fw-bold content">Ingredients: <%= recipes[i].ingredients%></p>
+              <p class=" content">Directions:<%= recipes[i].directions%></p>
+           </div>
           </li>
         <% } %>
         </ul>
         <div class="row justify-content-center mt-5">
           <a class="btn btn-primary" href="/feed">Return to Feed</a>
         </div>  
-      </div>  
+      </div>   -->
     </div>
   </div>
 </div>

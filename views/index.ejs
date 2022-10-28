@@ -1,10 +1,52 @@
 <%- include('partials/header') -%>
+ 
+<main class="container-xxl ">
+   <div class="row justify-content-around mt-1">
 
-<main class="container">
-    <div class="row justify-content-around mt-5">
-        <a href="/login" class="col-3 btn btn-primary"> Login</a>
-        <a href="/signup" class="col-3 btn btn-primary"> Signup</a>
+    <div class="pb-5 pt-5 hero container-xxl ">
+    <div class="titleHero">
+        <h1 class=" titleText ">Upload your coolest pictures</h1>
+        <p class="fs-5">The Internets Picture of the day</p>
     </div>
+       
+
+    </div>
+
+
+
+        <div id="carouselExampleIndicators" class="carousel slide mt-3" data-bs-ride="true">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="/imgs/messi.jpg" class=" vh-50 d-block w-100" alt="Messi">
+              </div>
+              <div class="carousel-item">
+                <img src="/imgs/lewa.jpg" class="vh-50  d-block w-100" alt="Lewa">
+              </div>
+              <div class="carousel-item">
+                <img src="/imgs/cRonaldo.jpg" class="w-50 d-block w-100" alt="Cristiano Ronaldo">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+        <!-- <a href="/login" class="col-3 btn btn-primary"> Login</a>
+        <a href="/signup" class="col-3 btn btn-primary"> Signup</a> -->
+    </div>
+    
+    
+   
 </main>
     
 
