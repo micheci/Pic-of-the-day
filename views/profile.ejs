@@ -1,47 +1,68 @@
 <%- include('partials/header') -%>
 <div class="container">
-  <div class="row mt-5">
-      <div class="col-6">
-          <div>
-              <p><strong>User Name</strong>: <%= user.userName %></p>
-              <p><strong>Email</strong>: <%= user.email %></p>
-              <a href="/logout" class="col-3 btn btn-primary">Logout</a>
-          </div>
-          <div class="mt-5">
-            <h2>Add a post</h2>
-            <form action="/post/createPost" enctype="multipart/form-data" method="POST">
-              <div class="mb-3">
-                  <label for="title" class="form-label">Title</label>
-                  <input type="text" class="form-control" id="title" name="title">
-              </div>
-              <div class="mb-3">
-                <label for="caption" class="form-label">Caption</label>
-                <textarea class="form-control" id="caption" name="caption"></textarea>
-              </div>
-              <div class="mb-3">
-                <label for="imgUpload" class="form-label">Image</label>
-                <input type="file" class="form-control" id="imageUpload" name="file">
-              </div>
-              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
-            </form>
-          </div>
-      </div>
-      <div class="col-6">
-        <ul class="row list-unstyled">
-        <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
-              <h2><%= posts[i].title%></h2>
-              <img class="img-fluid" src="<%= posts[i].image%>">
-            </a>
-          </li>
-        <% } %>
-        </ul>
-        <div class="row justify-content-center mt-5">
-          <a class="btn btn-primary" href="/feed">Return to Feed</a>
-        </div>  
-      </div>  
-    </div>
-  </div>
+  <div class="row mt-4" >
+      <div class="col-lg-6 stream1">
+        <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+          <div id="<player div ID>"></div>
+          <script type="text/javascript">
+            var options = {
+              width: '650rem',
+              height: '500rem',
+              channel: "loltyler1",
+              video: "<video ID>",
+              collection: "<collection ID>",
+              // only needed if your site is also embedded on embed.example.com and othersite.example.com
+              parent: ["embed.example.com", "othersite.example.com"]
+            };
+            var player = new Twitch.Player("<player div ID>", options);
+            player.setVolume(0.5);
+        </script>
 </div>
+
+      <div class="col-lg-6 stream2">
+        <script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+          <div id="<player2 div ID>"></div>
+            <script type="text/javascript">
+              var options = {
+                width: '650rem',
+                height: '500rem',
+                channel: "lcs",
+                video: "<video ID>",
+                collection: "<collection ID>",
+                // only needed if your site is also embedded on embed.example.com and othersite.example.com
+                parent: ["embed.example.com", "othersite.example.com"]
+              };
+              var player = new Twitch.Player("<player2 div ID>", options);
+              player.setVolume(0.5);
+            </script>
+</div>
+</div>
+<h3>Chat box</h3>
+<div class="box">
+  <ul id="scrollbar">
+    <% for(var i=0; i<comments.length; i++) {%>
+      <li class="col-6 justify-content-between mt-5">
+        <%=user.userName%>:<%= comments[i].comment%>
+        </a>
+      </li>
+    <% } %>
+   
+
+  </ul>
+</div>
+<h3>Chat now</h3>
+<form action="/comment/createComment" method="POST">
+  <label for="comment" class="form-label">Comment</label>
+  <input type="text" class="form-control" id="comment" name="comment">
+  <button type="submit">Send message</button>
+</form>
+
+
+</div>
+ 
+    
+ <script src="../js/scrollbar.js"></script>   
+ 
+
+
 <%- include('partials/footer') -%>
